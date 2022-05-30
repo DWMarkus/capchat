@@ -1,18 +1,45 @@
 const fs = require('fs')
-const { Sequelize } = require('sequelize')
+var mysql = require('mysql');
 
-// Connexion
-const sequelize = new Sequelize("capchat", "root", "", {
-    dialect: "mysql",
-    host: "localhost"
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "capchat"
 });
 
-try {
-    sequelize.authenticate();
-    console.log('Connecté à la base de données MySQL!');
-    sequelize.query("CREATE DATABASE `capchat`;").then(([results, metadata]) => {
-        console.log('Base de données créée !');
-      })
-  } catch (error) {
-    console.error('Impossible de se connecter, erreur suivante :', error);
-  }
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+
+  // CREATE DB
+  con.query("CREATE DATABASE capchat", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+  });
+
+  // CREATE TABLES
+  var sql = "CREATE TABLE artistes ('id' INT NOT NULL AUTO_INCREMENT, 'name' VARCHAR(255), 'mdp' VARCHAR(255), PRIMARY KEY('id'))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table ARTISTES created");
+  });
+
+  var sql = "CREATE TABLE themes ('id' INT NOT NULL AUTO_INCREMENT, 'nom' VARCHAR(255), PRIMARY KEY('id'))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table THEMES created");
+  });
+  /*
+  var sql = "CREATE TABLE images ('id' INT NOT NULL AUTO_INCREMENT, 'nom' VARCHAR(255), 'format' VARCHAR(255), PRIMARY KEY('id'))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table IMAGES created");
+  });
+  */
+  var sql = "CREATE TABLE jeu_images ('id' INT NOT NULL AUTO_INCREMENT, 'nom' VARCHAR(255), 'theme_id' INT, 'artiste_id' INT, PRIMARY KEY('id', 'theme_id', 'artiste_id'))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table JEU_IMAGES created");
+  });
+});

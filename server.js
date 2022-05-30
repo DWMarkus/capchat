@@ -26,9 +26,7 @@ const start = async () => {
   start();
 
   // Declare a named route
-fastify.get('/test', async (request, reply) => {
-    return { hello: 'user' };
-  });
+  fastify.get('/admin/artistes', (_request, reply) => sendHTMLFile(reply, 'artistes.html'))
 
   // Declare a dynamic route
 fastify.get('/name/:name', async (request, reply) => {
