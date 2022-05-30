@@ -1,6 +1,11 @@
 const fastify = require('fastify')({ logger: true })
+const fastify_compress = require('fastify-compress')
+const fastify_static = require('fastify-static')
+
 const fs = require('fs')
 const path = require('path')
+
+
 
 fastify.get('/', (_request, reply) => sendHTMLFile(reply, 'index.html'))
 
@@ -12,7 +17,7 @@ function sendHTMLFile(reply, file) {
 // Start the server
 const start = async () => {
     try {
-      await fastify.listen(3000);
+      await fastify.listen(3000); // localhost:XXXX
     } catch (err) {
       fastify.log.error(err);
       process.exit(1);

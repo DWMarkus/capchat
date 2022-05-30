@@ -4,6 +4,7 @@
     "fastify-compress": "^4.1.0",
     "fastify-static": "^4.7.0",
     "fs": "^0.0.1-security",
+    "mysql2": "^2.3.3",
     "path": "^0.12.7"
   }
 }

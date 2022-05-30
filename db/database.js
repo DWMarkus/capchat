@@ -1,22 +1,18 @@
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    port: 8889
-})
+const fs = require('fs')
+const { Sequelize } = require('sequelize')
 
 // Connexion
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
+const sequelize = new Sequelize("capchat", "root", "", {
+    dialect: "mysql",
+    host: "localhost"
 });
 
-/*
-con.query('SELECT * FROM', (err, rows) => {
-    if (err) throw err;
-
-    console.log('Résultat :');
-    console.log(rows);
-}); */
+try {
+    sequelize.authenticate();
+    console.log('Connecté à la base de données MySQL!');
+    sequelize.query("CREATE DATABASE `capchat`;").then(([results, metadata]) => {
+        console.log('Base de données créée !');
+      })
+  } catch (error) {
+    console.error('Impossible de se connecter, erreur suivante :', error);
+  }
