@@ -6,11 +6,18 @@
 		<link href="./public/captchat.css" rel="stylesheet">
 		<script defer src="./public/captchat.js"></script>
 	</head>
-	<body>
-		<main>
+	<body onload="createCaptcha()">
+
 			<div id="captchat"></div>
 			Bienvenue sur le CAPCHAT. <br />
 			<a href="admin/artistes">Artistes</a>
-		</main>
+
+			<form onsubmit="validateCaptcha()">
+				<div id="captcha">
+				</div>
+				<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+				<button type="submit">Valider</button>
+			</form>
+
 	</body>
 </html>
