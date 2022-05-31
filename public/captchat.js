@@ -28,9 +28,10 @@ function validateCaptcha() {
   event.preventDefault();
   debugger
   if (document.getElementById("cpatchaTextBox").value == code) {
-    alert("Captcha Valide.")
+    alert("Valid Captcha")
   }else{
-    alert("Captcha Invalide.");
+    alert("Invalid Captcha. try Again");
     createCaptcha();
   }
 }
+

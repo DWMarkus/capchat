@@ -7,17 +7,16 @@
 		<script defer src="./public/captchat.js"></script>
 	</head>
 	<body onload="createCaptcha()">
+		<form onsubmit="validateCaptcha()">
+		  <div id="captcha">
+		  </div>
+		  <input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
+		  <button type="submit">Submit</button>
+		</form>
 
-			<div id="captchat"></div>
-			Bienvenue sur le CAPCHAT. <br />
+		<hr />
 			<a href="admin/artistes">Artistes</a>
 
-			<form onsubmit="validateCaptcha()">
-				<div id="captcha">
-				</div>
-				<input type="text" placeholder="Captcha" id="cpatchaTextBox"/>
-				<button type="submit">Valider</button>
-			</form>
 
 	</body>
 </html>
