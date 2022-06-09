@@ -1,22 +1,24 @@
 <template>
     <div>
-        <div class="container">
-            <div class="row">
-                <div class="col text-center" v-if="loading">
-                    <div class="spinner-border text-primary spinner-vertical-align:" role="status" />
+    <div class="container">
+        <div class="row">
+        <div class="col text-center" v-if="loading">
+            <div class="spinner-border text-primary spinner-vertical-align:" role="status" />
+        </div>
+
+        <div class="col text-center" v-for="dessin in dessins" :key="dessin.id">
+            <div class="card text-center" style="width: 20rem;">
+                <img :src="'data:' + dessin.format + ';base64, ' + dessin.img" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                <div v-if="dessin.ImageSinguliere"> <strong>Image Singulière</strong> <br> indice :
+                    {{dessin.TexteQuestion}} <br> 
                 </div>
-                <div class="col text-center" v-for="dessin in dessins" :key="dessin.id">
-                    <div class="card text-center" style="width: 20rem;">
-                        <img :src="'data:' + dessin.format + ';base64, ' + dessin.img" class="card-img-top" alt="...">
-                        <div class="card-body text-center">
-                            <div v-if="dessin.ImageSinguliere"> <strong>Image Singulière</strong> <br> indice :
-                                {{dessin.TexteQuestion}} <br> </div>
-                            <a @click="deleteDessin(dessin.id)" class="card-link link-danger">Supprimer</a>
-                        </div>
-                    </div>
+                <a @click="deleteDessin(dessin.id)" class="card-link link-danger">Supprimer</a>
                 </div>
             </div>
         </div>
+        </div>
+    </div>
     </div>
 </template>
 

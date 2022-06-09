@@ -12,11 +12,6 @@ const routes = [
     component: Index
   },
   {
-    path: '/test',
-    name: 'test',
-    component: testcompte
-  },
-  {
     path: '/MonCompte',
     name: 'Compte', 
     component: Compte
@@ -25,7 +20,14 @@ const routes = [
     path: '/capchat/',
     name: 'Capchat',
     component: Capchat
+  },
+  /* Pour les tests
+  {
+    path: '/test',
+    name: 'test',
+    component: testcompte
   }
+  */
 ]
 
 const router = createRouter({

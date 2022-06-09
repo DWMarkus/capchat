@@ -1,19 +1,15 @@
 <template>
     <div>
-        <div class="container">
-            <table class="table">
-                <tbody>
-                    <tr v-for="artiste in artistes" :key="artiste">
-                        <td>
-                            {{artiste.nom}}
-                        </td>
-                        <td>
-                            <a @click="deleteArtiste(artiste.id)" class="card-link link-danger">Supprimer</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="container">
+        <table class="table">
+        <tbody>
+            <tr v-for="artiste in artistes" :key="artiste">
+                <td>{{artiste.nom}}</td>
+                <td><a @click="deleteArtiste(artiste.id)" class="card-link link-danger">Supprimer</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
     </div>
 </template>
 
