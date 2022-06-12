@@ -20,15 +20,8 @@
         <div class="text-center" v-if="reponseBool">
             <div class="row align-items-center">
                 <div class="col">
-                    <img src="@/assets/bird.gif" alt="gg" style="width: 100px; height: 100px;">
-                </div>
-                <div class="col">
-                    <h4>Capchat Ch'est fait 👌</h4>
+                    <h4>Capchat - Opération terminée</h4>
                     <h5><a :href="$route.query.link" target="_blank"> {{$route.query.link}} </a></h5>
-                </div>
-                <div class="col">
-                    <img src="@/assets/bird.gif" class="capchat"
-                        style="width: 100px; height: 100px; transform: scaleX(-1)">
                 </div>
             </div>
         </div>

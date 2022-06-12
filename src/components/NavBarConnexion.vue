@@ -1,94 +1,75 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-            <a class="navbar-brand disable-select">GESTION DE CAPTCHAS</a>
-            <div class="align-self-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#connexion">Se connecter</a>
-                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#inscription">S'inscrire</a>
-                </div>
-            </div>
-            </div>
-        </nav>
-
+        <h1> CapChat - Créez votre capchat ! </h1><hr />
         <!-- Inscription -->
-        <div class="modal fade" id="inscription" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
+        <div id="inscription" tabindex="-1" aria-hidden="true">
+            <div>
                 <form @submit.prevent="inscription()">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Inscription</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Surnom</label>
+                            <h5>- Formulaire d'inscription -</h5>
+
+                            <div>
+                                <label class="form-label">Pseudo : </label>
                                 <input type="text" v-model="surnomInscription" class="form-control" required
                                     :disabled="inscriptionBool">
-                                <div class="form-text">
-                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Mot de passe</label>
+
+                            <div>
+                                <label class="form-label">Mot de passe : </label>
                                 <input type="password" v-model="mdpInscription" class="form-control" required
                                     :disabled="inscriptionBool">
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Confirmer le mot de passe</label>
+
+                            <div>
+                                <label class="form-label">Confirmation du mot de passe : </label>
                                 <input type="password" v-model="mdpConfirmeInscription" class="form-control" required
                                     :disabled="inscriptionBool">
                             </div>
-                        </div>
+
                         <div class="alert alert-danger" role="alert" v-if="errorBoolInscription">
                             {{errorMsg}}
                         </div>
                         <div class="modal-footer" v-if="!inscriptionBool">
                             <button type="submit" class="btn btn-primary">Inscription</button>
-                            <br>
                         </div>
+
                         <div style="text-align: center;" v-else>
                             {{inscriptionMsg}}
                             <br>
-                            <a style="cursor: pointer;" class="link-secondary" data-bs-dismiss="modal" aria-label="Close" @click="toAccount()">Cliquer ici pour accedez à votre compte</a>
-                            <br><br><br>
+                            <a style="cursor: pointer;" aria-label="Close" @click="toAccount()">Cliquer ici pour accedez à votre compte</a>
                         </div>
-                    </div>
+
                 </form>
             </div>
         </div>
 
         <!-- Connexion -->
-        <div class="modal fade" id="connexion" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog">
+        <div id="connexion" tabindex="-1" aria-hidden="true">
+            <div>
                 <form @submit.prevent="connexion()">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Connexion</h5>
-                            <button type="button" class="btn-close" ref="Close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Surnom</label>
+                            <h5>- Formulaire de connexion -</h5>
+
+                            <div>
+                                <label class="form-label">Pseudo : </label>
                                 <input type="text" v-model="surnomConnexion" class="form-control" required>
-                                <div class="form-text">
-                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label class="form-label">Mot de passe</label>
+
+                            <div>
+                                <label class="form-label">Mot de passe : </label>
                                 <input type="password" v-model="mdpConnexion" class="form-control" required>
                             </div>
-                            <div class="alert alert-danger" role="alert" v-if="errorBoolConnexion">
+
+                            <div role="alert" v-if="errorBoolConnexion">
                                 {{errorMsg}}
                             </div>
-                        </div>
-                        <div class="modal-footer">
+
+                        <div>
                             <button type="submit" aria-label="Close" class="btn btn-primary">Connexion</button>
                         </div>
-                    </div>
+
                 </form>
             </div>
         </div>
+
     </div>
 </template>
 

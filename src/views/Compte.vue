@@ -20,7 +20,7 @@
                 <div v-if="menuSelect == 'ton Capchat'">
                     <Home />
                 </div>
-                <div v-else-if="menuSelect == 'Tes jeux / Dessins'">
+                <div v-else-if="menuSelect == 'Tes jeux d\'images'">
                     <ListeJeu />
                 </div>
             </transition>

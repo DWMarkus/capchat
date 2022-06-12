@@ -17,10 +17,7 @@
                         readonly>
                     <br>
                     <div v-if="erreur" class="alert alert-danger animate__animated animate__bounceIn" role="alert">
-                        t'es con ?
-                    </div>
-                    <div v-if="copie" class="alert alert-success animate__animated animate__bounceIn" role="alert">
-                        Balise html Copié dans le presse-papier
+                        Erreur!
                     </div>
                 </div>
             </div>
