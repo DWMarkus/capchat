@@ -101,7 +101,6 @@ export default {
             .then(
                 data => {
                     this.errorBoolConnexion = false;
-                    this.$refs.Close.click();
                     localStorage.setItem('token', data.data.token)
                     this.$router.push('/MonCompte')
                 }
@@ -137,7 +136,7 @@ export default {
 
             }
             else {
-                this.errorMsg = "dégage la"
+                this.errorMsg = "erreur"
                 this.errorBoolInscription = true;
             }
         },

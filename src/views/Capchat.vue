@@ -4,7 +4,7 @@
         <br>
         <div class="d-flex justify-content-center" v-if="loading">
             <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Chargement...</span>
             </div>
         </div>
         <div class="text-center ">
@@ -20,13 +20,13 @@
         <div class="text-center" v-if="reponseBool">
             <div class="row align-items-center">
                 <div class="col">
-                    <h4>Capchat - Opération terminée</h4>
+                    <h4>Capchat Valide - Opération terminée</h4>
                     <h5><a :href="$route.query.link" target="_blank"> {{$route.query.link}} </a></h5>
                 </div>
             </div>
         </div>
         <div class="text-center" v-if="erreur">
-            <h4>Gros nul</h4>
+            <h4>Capchat Invalide - Voir indice</h4>
         </div>
     </div>
 </template>

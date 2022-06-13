@@ -20,13 +20,13 @@
                 <div v-if="menuSelect == 'ton Capchat'">
                     <Home />
                 </div>
-                <div v-else-if="menuSelect == 'Tes jeux d\'images'">
+                <div v-else-if="menuSelect == 'Tes jeux'">
                     <ListeJeu />
                 </div>
             </transition>
         </div>
         <div v-else>
-            <div v-if="menuSelect == 'Les jeux / Dessins'">
+            <div v-if="menuSelect == 'Les jeux'">
                 <ListeJeuAdmin />
             </div>
             <div v-else-if="menuSelect == 'les Artistes'">
@@ -54,10 +54,10 @@ export default {
             admin: null,
             menus: [
                 "ton Capchat",
-                "Tes jeux / Dessins",
+                "Tes jeux",
             ],
             menusAdmin: [
-                "Les jeux / Dessins",
+                "Les jeux",
                 "les Artistes"
             ],
             menuSelect: null

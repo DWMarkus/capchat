@@ -3,9 +3,9 @@
         <div class="container">
             <div class="row align-items-start">
                 <div class="col">
-                    <select id="idJeu" class="form-control" required>
+                    <select id="idJeu" class="form-control" @click="setJeu()" required>
                         <option disabled selected hidden>Choisir jeu</option>
-                        <option v-for="jeu in listJeu" :key="jeu" :value="jeu.id" @click="setJeu()"> {{jeu.nom}}
+                        <option v-for="jeu in listJeu" :key="jeu" :value="jeu.id"> {{jeu.nom}}
                         </option>
                     </select>
                     <br>
@@ -61,7 +61,6 @@ export default {
         },
         copy() {
             if (!this.link && !this.value) {
-                console.log("t'es con ?");
                 this.copie = false;
                 this.erreur = true;
             }
