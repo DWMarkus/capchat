@@ -1,0 +1,13 @@
+a:hover {
+    color: blue;
+}
+
+a.bouton {
+    background-color: black;
+    color: white;
+}
+
+a.bouton {
+    background-color: red;
+    color: white;
+}

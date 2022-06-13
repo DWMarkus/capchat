@@ -14,8 +14,8 @@
                         <p class="card-text">Theme : {{data.theme}}</p>
                         <p class="card-text h5">Artiste : {{data.nom}}</p>
                         <br>
-                        <a @click="getDessinComponents(data.id, data.jeu)" class="card-link">Selectionner</a>
-                        <a @click="deleteJeu(data.id)" class="card-link link-danger">Supprimer</a>    
+                        <a @click="getDessinComponents(data.id, data.jeu)" class="bouton">Selectionner </a><br>
+                        <a @click="deleteJeu(data.id)" class="bouton-red">Supprimer </a>    
                         <br><br>
                     </div>
                 </div>

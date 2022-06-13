@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "e06305cc-28c4-4b63-85fb-9537ce2d1be3",
+		"name": "CapChat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21225411"
+	},
+	"item": [
+		{
+			"name": "GetListJeu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInVzZXJuYW1lIjoiemFraSIsImlhdCI6MTY1NTE0OTE3OCwiZXhwIjoxNjU1MTkyMzc4fQ.8rJwt_wnZM_3z0uPpFM6rFp330KyIB9qRs5zbwb-aOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getListJeu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getListJeu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetListThemes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInVzZXJuYW1lIjoiemFraSIsImlhdCI6MTY1NTE0OTE3OCwiZXhwIjoxNjU1MTkyMzc4fQ.8rJwt_wnZM_3z0uPpFM6rFp330KyIB9qRs5zbwb-aOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/themes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"themes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connexion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/connexion?u=zaki&mdp=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"connexion"
+					],
+					"query": [
+						{
+							"key": "u",
+							"value": "zaki"
+						},
+						{
+							"key": "mdp",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCompte",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInVzZXJuYW1lIjoiemFraSIsImlhdCI6MTY1NTE0OTE3OCwiZXhwIjoxNjU1MTkyMzc4fQ.8rJwt_wnZM_3z0uPpFM6rFp330KyIB9qRs5zbwb-aOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/compte",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"compte"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetJeu",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInVzZXJuYW1lIjoiemFraSIsImlhdCI6MTY1NTE0OTE3OCwiZXhwIjoxNjU1MTkyMzc4fQ.8rJwt_wnZM_3z0uPpFM6rFp330KyIB9qRs5zbwb-aOI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/getJeu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getJeu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
